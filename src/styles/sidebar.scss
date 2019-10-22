@@ -1,0 +1,31 @@
+.main-container {
+  min-height: 100%;
+  margin-left: $sideBarWidth;
+}
+
+.sidebar-container {
+  width: $sideBarWidth;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1001;
+  overflow: hidden;
+  background-color: $menuBg;
+  font-size: 0;
+  
+  .scrollbar-wrapper {
+    overflow-x: hidden;
+  }
+  
+  .el-scrollbar__bar.is-vertical {
+    right: 0px;
+  }
+  
+  .svg-icon {
+    margin-right: 16px;
+  }
+}
+
+

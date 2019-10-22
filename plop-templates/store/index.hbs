@@ -1,0 +1,30 @@
+{{#if state}}
+const state = {
+
+}
+{{/if}}
+
+{{#if mutations}}
+const mutations = {
+
+}
+{{/if}}
+
+{{#if actions}}
+const actions = {
+
+}
+{{/if}}
+
+export default {
+  namespaced: true,
+  {{#if state}}
+  state,
+  {{/if}}
+  {{#if mutations}}
+  mutations,
+  {{/if}}
+  {{#if actions}}
+  actions
+  {{/if}}
+}
