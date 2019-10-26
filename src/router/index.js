@@ -8,16 +8,18 @@ let arg = req.keys().reduce((ret, v) => {
   ret.push(req(v).default)
   return ret
 }, [])
-console.log(arg)
+// console.log(arg)
 
 Vue.use(Router)
 
 export const constantRoutes = [
+
   {
     path: '/login',
     component: () => import(/* webpackChunkName:'login' */ '@/views/login/index.vue'),
     hidden: true
   },
+
   {
     path: '/',
     component: Layout,
@@ -25,14 +27,17 @@ export const constantRoutes = [
     children: [
       {
         path: 'dashboard',
+        name: 'Dashboard',
         component: () => import(/* webpackChunkName:'dashboard' */ '@/views/dashboard/index.vue'),
         meta: { title: 'Dashboard', icon: 'dashboard' }
       }
     ]
   }
+
 ]
 
 export const asyncRoutes = [
+
   {
     path: '/permission',
     component: Layout,
@@ -44,6 +49,7 @@ export const asyncRoutes = [
       roles: ['admin', 'editor']
     },
     children: [
+
       {
         path: 'page',
         component: () => import('@/views/permission/page.vue'),
@@ -64,6 +70,7 @@ export const asyncRoutes = [
       }
     ]
   },
+
   {
     path: '/icons',
     component: Layout,
@@ -76,6 +83,7 @@ export const asyncRoutes = [
       }
     ]
   }
+
 ].concat(arg)
 
 const createRouter = () =>

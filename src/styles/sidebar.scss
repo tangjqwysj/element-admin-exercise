@@ -1,9 +1,11 @@
 .main-container {
   min-height: 100%;
   margin-left: $sideBarWidth;
+  transition:margin-left .28s;
 }
 
 .sidebar-container {
+  transition:width 0.28s;
   width: $sideBarWidth;
   height: 100%;
   position: fixed;
@@ -14,18 +16,69 @@
   overflow: hidden;
   background-color: $menuBg;
   font-size: 0;
-  
+
+  &.has-logo {
+    .el-scrollbar {
+      height: calc(100% - 50px);
+    }
+  }
+
+  .el-menu{
+    width: 100%!important;
+    height:100%;
+    border:none;
+  }
+
   .scrollbar-wrapper {
     overflow-x: hidden;
   }
-  
+
   .el-scrollbar__bar.is-vertical {
     right: 0px;
   }
-  
+
+  .el-scrollbar{
+    height: 100%;
+  }
+
   .svg-icon {
     margin-right: 16px;
   }
+
+  .el-submenu.is-active .el-submenu__title {
+    color: $subMenuActiveText !important;
+  }
+
+  .submenu-title-noDropdown,
+  .el-submenu__title{
+    &:hover{
+      background:$menuHover!important;
+    }
+  }
+
+  .nest-menu .el-submenu>.el-submenu__title,
+  .el-submenu .el-menu-item{
+    background:$subMenuBg!important;
+    &:hover{
+      background:$subMenuHover!important;
+    }
+  }
 }
 
+.hideSidebar{
+  .sidebar-container{
+    width:54px;
+  }
 
+  .main-container{
+    margin-left:54px;
+  }
+
+  .svg-icon {
+    margin-right: 20px;
+  }
+  
+  .el-menu--collapse .el-submenu >.el-submenu__title >span{
+    display:none;
+  }
+}

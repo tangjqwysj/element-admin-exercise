@@ -1,6 +1,11 @@
 $sideBarWidth: 210px;
 $menuBg: #304156;
 $menuText: #bfcbd9;
+$subMenuActiveText:#f4f4f5;
+$menuHover:#000;
+
+$subMenuBg:#1f2d3d;
+$subMenuHover:#001528;
 
 :export {
   sideBarWidth: $sideBarWidth;
